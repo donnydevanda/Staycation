@@ -16,11 +16,6 @@ export default function Hero(props) {
     });
   }
 
-  function numberFormat(number) {
-    const formatNumbering = new Intl.NumberFormat("id-ID");
-    return formatNumbering.format(number);
-  }
-
   return (
     <section className="container pt-4">
       <div className="row align-items-center">
