@@ -1,4 +1,5 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
 import Button from "../components/Button";
 import IconText from "./IconText";
 import { useLocation } from "react-router-dom";
@@ -10,7 +11,7 @@ export default function Header(props) {
   };
 
   return (
-    <div>
+    <Fade>
       <header className="spacing-sm">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
@@ -43,6 +44,6 @@ export default function Header(props) {
           </nav>
         </div>
       </header>
-    </div>
+    </Fade>
   );
 }
