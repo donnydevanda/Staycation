@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import propTypes from "prop-types";
 
-import { DateRange } from " react-date-range";
+import { DateRange } from "react-date-range";
 
 import "./index.scss";
-import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
 
 import formatDate from "utils/formatDate";
-import iconCalendar from "assets/images/icons/ic_calendar.svg";
+import iconCalendar from "assets/images/icons/icon-calendar.svg";
 
 export default function Date(props) {
   const { value, placeholder, name } = props;
@@ -59,7 +59,7 @@ export default function Date(props) {
           </span>
         </div>
         <input
-          readonly
+          readOnly
           type="text"
           className="form-control"
           value={displayDate}

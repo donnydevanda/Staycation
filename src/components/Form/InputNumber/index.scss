@@ -3,7 +3,7 @@
   .input-group {
     background-color: $white;
 
-    .input-group-test {
+    .input-group-text {
       border: 0;
       cursor: pointer;
       color: $white;
@@ -23,13 +23,14 @@
       }
     }
 
-    .input-form-control {
+    input.form-control {
+      min-height: 45px;
       border: 0;
       border-radius: 0;
       outline: 0;
       box-shadow: none;
       background-color: $gray-100;
-      padding: 0.575rem 1 rem;
+      padding: 0.575rem 1rem;
       text-align: center;
     }
   }

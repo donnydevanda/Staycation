@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-
 import propTypes from "prop-types";
 import "./index.scss";
 
 export default function Number(props) {
-  const { value, placeholder, name, min, max, prefix, suffix, isSuffixPlural } =
-    props;
-  const [inputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
+  const { value, placeholder, name, min, max, prefix, suffix } = props;
+
+  const [InputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
 
   const onChange = (e) => {
     let value = String(e.target.value);
-    if (prefix) value = e.target.replace(prefix);
-    if (suffix) value = e.target.replace(suffix);
+    if (prefix) value = value.replace(prefix);
+    if (suffix) value = value.replace(suffix);
 
     const patternNumeric = new RegExp("[0-9]*");
     const isNumeric = patternNumeric.test(value);
@@ -23,9 +22,7 @@ export default function Number(props) {
           value: +value,
         },
       });
-      setInputValue(
-        `${prefix}${value}${suffix}${isSuffixPlural && value > 1 ? "s" : ""}`
-      );
+      setInputValue(`${prefix}${value}${suffix}`);
     }
   };
 
@@ -38,7 +35,6 @@ export default function Number(props) {
         },
       });
   };
-
   const plus = () => {
     value < max &&
       onChange({
@@ -48,27 +44,28 @@ export default function Number(props) {
         },
       });
   };
-
   return (
     <div className={["input-number mb-3", props.outerClassName].join(" ")}>
       <div className="input-group">
         <div className="input-group-prepend">
-          <div className="input-group-text-minus" onClick={minus}>
+          <span className="input-group-text minus" onClick={minus}>
             -
-          </div>
-          <input
-            min={min}
-            max={max}
-            name={name}
-            pattern="[0-9]*"
-            className="form-control"
-            placeholder={placeholder ? placeholder : "0"}
-            value={String(InputValue)}
-            onChange={onChange}
-          />
+          </span>
         </div>
+        <input
+          min={min}
+          max={max}
+          name={name}
+          pattern="[0-9]*"
+          className="form-control"
+          placeholder={placeholder ? placeholder : "0"}
+          value={String(InputValue)}
+          onChange={onChange}
+        />
         <div className="input-group-append">
-          <div className="input-group-text-plus" onClick={plus}></div>
+          <span className="input-group-text plus" onClick={plus}>
+            +
+          </span>
         </div>
       </div>
     </div>
@@ -84,8 +81,7 @@ Number.defaultProps = {
 
 Number.propTypes = {
   value: propTypes.oneOfType([propTypes.string, propTypes.number]),
-  onchange: propTypes.func,
-  isSuffixPlural: propTypes.bool,
+  onChange: propTypes.func,
   placeholder: propTypes.string,
   outerClassName: propTypes.string,
 };
