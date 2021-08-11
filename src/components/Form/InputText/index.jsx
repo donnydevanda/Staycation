@@ -31,20 +31,21 @@ export default function Text(props) {
 
     if (type === "email") {
       if (!pattern.test(event.target.value)) setHasError(errorResponse);
-      else setHasError("");
+      else setHasError(null);
     }
 
     if (type === "tel") {
       if (event.target.validity.valid) props.onChange(target);
-      else props.onChange(target);
+    } else {
+      props.onChange(target);
     }
   };
 
   return (
-    <div className={["input-text- mb-3", outerClassName].join(" ")}>
+    <div className={["input-text mb-3", outerClassName].join(" ")}>
       <div className="input-group">
         {prepend && (
-          <div className="input-group-prepeng bg-gray-900">
+          <div className="input-group-prepend bg-gray-900">
             <span className="input-group-text">{prepend}</span>
           </div>
         )}
@@ -72,11 +73,12 @@ Text.defaultProps = {
   type: "text",
   pattern: "",
   placeholder: "Please type here...",
-  errorResponse: "Please match the request format.",
+  errorResponse: "Please match the requested format.",
 };
-Text.defaultProps = {
-  name: propTypes.string.required,
-  value: propTypes.oneOfType([propTypes.number, propTypes.string]).required,
+
+Text.propTypes = {
+  name: propTypes.string.isRequired,
+  value: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
   onChange: propTypes.func.isRequired,
   prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
   append: propTypes.oneOfType([propTypes.number, propTypes.string]),

@@ -1,14 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import propTypes from "prop-types";
 
 import "./index.scss";
 
 export default function File(props) {
+  const [FileName, setFileName] = useState("");
   const {
-    accept,
-    value,
     placeholder,
     name,
+    accept,
     prepend,
     append,
     outerClassName,
@@ -17,11 +17,21 @@ export default function File(props) {
 
   const refInputFile = useRef(null);
 
+  const onChange = (event) => {
+    setFileName(event.target.value);
+    props.onChange({
+      target: {
+        name: event.target.name,
+        value: event.target.files,
+      },
+    });
+  };
+
   return (
-    <div className={["input-text- mb-3", outerClassName].join(" ")}>
+    <div className={["input-text mb-3", outerClassName].join(" ")}>
       <div className="input-group">
         {prepend && (
-          <div className="input-group-prepeng bg-gray-900">
+          <div className="input-group-prepend bg-gray-900">
             <span className="input-group-text">{prepend}</span>
           </div>
         )}
@@ -31,12 +41,12 @@ export default function File(props) {
           name={name}
           className="d-none"
           type="file"
-          value={value}
-          onChange={props.onChange}
+          value={FileName}
+          onChange={onChange}
         />
         <input
-          onClick={() => refInputFile.current.onClick()}
-          defaultValue={value}
+          onClick={() => refInputFile.current.click()}
+          defaultValue={FileName}
           placeholder={placeholder}
           className={["form-control", inputClassName].join(" ")}
         />
@@ -50,17 +60,17 @@ export default function File(props) {
   );
 }
 
-Text.defaultProps = {
+File.defaultProps = {
   placeholder: "Browse a file...",
 };
-Text.defaultProps = {
-  name: propTypes.string.required,
-  accept: propTypes.string.required,
-  value: propTypes.string.required,
+
+File.propTypes = {
+  name: propTypes.string.isRequired,
+  accept: propTypes.string.isRequired,
+  value: propTypes.string.isRequired,
   onChange: propTypes.func.isRequired,
   prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
   append: propTypes.oneOfType([propTypes.number, propTypes.string]),
-  type: propTypes.string,
   placeholder: propTypes.string,
   outerClassName: propTypes.string,
   inputClassName: propTypes.string,
