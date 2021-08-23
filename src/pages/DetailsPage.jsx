@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import Header from "parts/Header";
 import PageDetailTitle from "parts/PageDetailTitle";
 import FeaturedImage from "parts/FeaturedImage";
-import PageDetailSescription from "parts/PageDetailSescription";
+import PageDetailDescription from "parts/PageDetailDescription";
 import BookingForm from "parts/BookingForm";
 import Categories from "parts/Categories";
 import Testimony from "parts/Testimony";
@@ -35,7 +35,7 @@ export default class DetailsPage extends Component {
           <div className="row">
             <div className="col-7 pr-5">
               <Fade bottom>
-                <PageDetailSescription data={ItemDetails} />
+                <PageDetailDescription data={ItemDetails} />
               </Fade>
             </div>
             <div className="col-5">
