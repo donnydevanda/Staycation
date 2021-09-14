@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Fade from "react-reveal/Fade";
+import { connect } from "react-redux";
 
 import Header from "parts/Header";
 import Button from "components/Button";

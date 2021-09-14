@@ -21,7 +21,11 @@ export default function MostPicked(props) {
                     <span className="font-weight-light">per {item.unit}</span>
                     <figure className="img-wrapper">
                       <img
-                        src={item.imageUrl}
+                        src={
+                          item.imageId[0]
+                            ? `https://admin-bwamern.herokuapp.com/${item.imageId[0].imageUrl}`
+                            : ""
+                        }
                         alt={item.name}
                         className="img-cover"
                       />
