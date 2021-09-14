@@ -1,5 +1,5 @@
 import { CHECKOUT_BOOKING } from "../types";
-import axios from "configs/axios";
+import axios from "axios";
 
 export const checkoutBooking = (payload) => (dispatch) => {
   dispatch({

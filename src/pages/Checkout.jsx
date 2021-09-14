@@ -14,9 +14,7 @@ import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 
-import ItemDetails from "json/itemDetails.json";
-
-export default class Checkout extends Component {
+class Checkout extends Component {
   state = {
     data: {
       firstName: "",
@@ -44,10 +42,31 @@ export default class Checkout extends Component {
 
   render() {
     const { data } = this.state;
+    const { checkout, page } = this.props;
 
-    const checkout = {
-      duration: 3,
-    };
+    if (!checkout)
+      return (
+        <div className="container">
+          <div
+            className="row align-items-center justify-content-center text-center"
+            style={{ height: "100vh" }}
+          >
+            <div className="col-3">
+              Pilih kamar dulu
+              <div>
+                <Button
+                  className="btn mt-5"
+                  type="button"
+                  onClick={() => this.props.history.goBack()}
+                  isLight
+                >
+                  Back
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
 
     const steps = {
       bookingInformation: {
@@ -57,7 +76,7 @@ export default class Checkout extends Component {
           <BookingInformation
             data={data}
             checkout={checkout}
-            ItemDetails={ItemDetails}
+            ItemDetails={page[checkout._id]}
             onChange={this.onChange}
           />
         ),
@@ -68,7 +87,7 @@ export default class Checkout extends Component {
         content: (
           <Payment
             data={data}
-            ItemDetails={ItemDetails}
+            ItemDetails={page[checkout._id]}
             checkout={checkout}
             onChange={this.onChange}
           />
@@ -84,7 +103,7 @@ export default class Checkout extends Component {
     return (
       <Fragment>
         <Header isCentered />
-        <Stepper steps={steps} initialStep="payment">
+        <Stepper steps={steps} initialStep="bookingInformation">
           {(prevStep, nextStep, CurrentStep, steps) => (
             <>
               <Numbering
@@ -179,3 +198,10 @@ export default class Checkout extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  checkout: state.checkout,
+  page: state.page,
+});
+
+export default connect(mapStateToProps)(Checkout);
