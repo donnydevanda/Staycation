@@ -9,7 +9,11 @@ export const checkoutBooking = (payload) => (dispatch) => {
 };
 
 export const submitBooking = (payload) => () => {
-  return axios.post(`/booking-page`, payload, {
-    headers: { contentType: "multipart/form-data" },
-  });
+  return axios.post(
+    `https://staycationserver.herokuapp.com/api/v1/member/booking-page`,
+    payload,
+    {
+      headers: { contentType: "multipart/form-data" },
+    }
+  );
 };

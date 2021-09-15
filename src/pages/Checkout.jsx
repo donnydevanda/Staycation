@@ -1,18 +1,21 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
 
 import Header from "parts/Header";
 import Button from "components/Button";
-import Stepper from "components/Stepper";
-import Controller from "components/Stepper/Controller";
-import MainContent from "components/Stepper/MainContent";
-import Meta from "components/Stepper/Meta";
-import Numbering from "components/Stepper/Numbering";
+import Stepper, {
+  Numbering,
+  Meta,
+  MainContent,
+  Controller,
+} from "components/Stepper";
 
 import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
+
+import { submitBooking } from "store/actions/checkout";
 
 class Checkout extends Component {
   state = {
@@ -20,7 +23,7 @@ class Checkout extends Component {
       firstName: "",
       lastName: "",
       email: "",
-      phone: "",
+      phoneNumber: "",
       proofPayment: "",
       bankName: "",
       bankHolder: "",
@@ -38,12 +41,36 @@ class Checkout extends Component {
 
   componentDidMount() {
     window.scroll(0, 0);
+    document.title = "Staycation | Checkout";
   }
+
+  _Submit = (nextStep) => {
+    const { data } = this.state;
+    const { checkout } = this.props;
+
+    const payload = new FormData();
+    payload.append("idItem", "5e96cbe292b97300fc902222");
+    payload.append("duration", checkout.duration);
+    payload.append("startDate", checkout.date.startDate);
+    payload.append("endDate", checkout.date.endDate);
+    payload.append("firstName", data.firstName);
+    payload.append("lastName", data.lastName);
+    payload.append("email", data.email);
+    payload.append("phoneNumber", data.phoneNumber);
+    payload.append("accountName", data.bankHolder);
+    payload.append("bankName", data.bankName);
+    payload.append("image", data.proofPayment[0]);
+
+    this.props.submitBooking(payload).then(() => {
+      nextStep();
+    });
+  };
 
   render() {
     const { data } = this.state;
     const { checkout, page } = this.props;
-
+    console.log(checkout.date.startDate);
+    console.log(checkout.date.endDate);
     if (!checkout)
       return (
         <div className="container">
@@ -71,7 +98,7 @@ class Checkout extends Component {
     const steps = {
       bookingInformation: {
         title: "Booking Information",
-        description: "Please fill up the blank field below",
+        description: "Please fill up the blank fields below",
         content: (
           <BookingInformation
             data={data}
@@ -83,7 +110,7 @@ class Checkout extends Component {
       },
       payment: {
         title: "Payment",
-        description: "Kindly follow the instruction below",
+        description: "Kindly follow the instructions below",
         content: (
           <Payment
             data={data}
@@ -101,8 +128,9 @@ class Checkout extends Component {
     };
 
     return (
-      <Fragment>
+      <>
         <Header isCentered />
+
         <Stepper steps={steps} initialStep="bookingInformation">
           {(prevStep, nextStep, CurrentStep, steps) => (
             <>
@@ -121,7 +149,7 @@ class Checkout extends Component {
                   {data.firstName !== "" &&
                     data.lastName !== "" &&
                     data.email !== "" &&
-                    data.phone !== "" && (
+                    data.phoneNumber !== "" && (
                       <Fade>
                         <Button
                           className="btn mb-3"
@@ -194,7 +222,7 @@ class Checkout extends Component {
             </>
           )}
         </Stepper>
-      </Fragment>
+      </>
     );
   }
 }
@@ -204,4 +232,4 @@ const mapStateToProps = (state) => ({
   page: state.page,
 });
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, { submitBooking })(Checkout);

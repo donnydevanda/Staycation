@@ -67,12 +67,12 @@ export default function BookingInformation(props) {
                 onChange={props.onChange}
               />
 
-              <label htmlFor="phone">Phone Number</label>
+              <label htmlFor="phoneNumber">Phone Number</label>
               <InputText
-                id="phone"
-                name="phone"
+                id="phoneNumber"
+                name="phoneNumber"
                 type="tel"
-                value={data.phone}
+                value={data.phoneNumber}
                 onChange={props.onChange}
               />
             </Fade>
