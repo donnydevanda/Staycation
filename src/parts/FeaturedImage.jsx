@@ -4,12 +4,12 @@ import Fade from "react-reveal/Fade";
 export default function FeaturedImage({ data }) {
   return (
     <section className="container">
-      <div className="container-grid sm">
+      <div className="container-grid">
         {data.map((item, index) => {
           return (
             <div
               key={`FeaturedImage-${index}`}
-              className={`item ${index > 0 ? "column-5" : "column-7"} ${
+              className={`item ${index > 0 ? "column-4" : "column-8"} ${
                 index > 0 ? "row-1" : "row-2"
               }`}
             >

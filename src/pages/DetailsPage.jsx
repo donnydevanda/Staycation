@@ -18,7 +18,6 @@ import { fetchPage } from "store/actions/page";
 
 class DetailsPage extends Component {
   componentDidMount() {
-    window.title = "Staycation | Details";
     window.scrollTo(0, 0);
 
     if (!this.props.page[this.props.match.params.id])
@@ -35,7 +34,7 @@ class DetailsPage extends Component {
 
     const breadcrumb = [
       { pageTitle: "Home", pageHref: "" },
-      { pageTitle: "House Details", pageHref: "" },
+      { pageTitle: "Details", pageHref: "" },
     ];
 
     return (
@@ -45,12 +44,12 @@ class DetailsPage extends Component {
         <FeaturedImage data={page[match.params.id].imageId} />
         <section className="container">
           <div className="row">
-            <div className="col-7 pr-5">
+            <div className="col-sm-7">
               <Fade bottom>
                 <PageDetailDescription data={page[match.params.id]} />
               </Fade>
             </div>
-            <div className="col-5">
+            <div className="col-sm-5">
               <Fade bottom>
                 <BookingForm
                   itemDetails={page[match.params.id]}
@@ -60,10 +59,8 @@ class DetailsPage extends Component {
             </div>
           </div>
         </section>
-
         <Activities data={page[match.params.id].activityId} />
         <Testimony data={page[match.params.id].testimonial} />
-
         <Footer />
       </Fragment>
     );

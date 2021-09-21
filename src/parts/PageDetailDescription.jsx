@@ -4,9 +4,9 @@ import ReactHtmlParser from "react-html-parser";
 export default function PageDetailSescription({ data }) {
   return (
     <main>
-      <h4>About the place</h4>
-      {ReactHtmlParser(data.description)}
-      <div className="row" style={{ marginTop: 30 }}>
+      <h2 className="h4">About the place</h2>
+      <p>{ReactHtmlParser(data.description)}</p>
+      <div className="row mt-4">
         {data.featureId.length === 0
           ? "No Features"
           : data.featureId.map((feature, index) => {

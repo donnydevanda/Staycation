@@ -34,7 +34,7 @@ class LandingPage extends Component {
 
     return (
       <Fragment>
-        <Header {...this.props}></Header>
+        <Header {...this.props} />
         <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} />
         <MostPicked
           refMostPicked={this.refMostPicked}
