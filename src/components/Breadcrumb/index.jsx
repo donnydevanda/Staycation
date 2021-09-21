@@ -1,7 +1,7 @@
 import React from "react";
 
 import propTypes from "prop-types";
-import Button from "../../components/Button";
+// import Button from "components/Button";
 
 import "./index.scss";
 
@@ -21,9 +21,7 @@ export default function Breadcrumb(props) {
               {index === props.data.length - 1 ? (
                 item.pageTitle
               ) : (
-                <Button type="link" href={item.pageHref}>
-                  {item.pageTitle}
-                </Button>
+                <a href={item.pageHref}>{item.pageTitle}</a>
               )}
             </li>
           );
