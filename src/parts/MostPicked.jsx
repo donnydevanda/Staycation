@@ -17,8 +17,14 @@ export default function MostPicked(props) {
               >
                 <Fade bottom delay={300 * index}>
                   <div className="card card-featured">
-                    <div className="tag">${item.price}</div>
-                    <span className="font-weight-light">per {item.unit}</span>
+                    <div className="tag d-none d-lg-block">
+                      ${item.price}
+                      <span className="font-weight-light">
+                        {" "}
+                        per {item.unit}
+                      </span>
+                    </div>
+
                     <figure className="img-wrapper">
                       <img
                         src={
@@ -30,6 +36,7 @@ export default function MostPicked(props) {
                         className="img-cover"
                       />
                     </figure>
+
                     <div className="meta-wrapper">
                       <Button
                         type="link"
@@ -38,7 +45,7 @@ export default function MostPicked(props) {
                       >
                         <h5>{item.title}</h5>
                       </Button>
-                      <span>
+                      <span className="d-none d-lg-block">
                         {item.city}, {item.country}
                       </span>
                     </div>

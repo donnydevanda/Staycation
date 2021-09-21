@@ -11,7 +11,7 @@ export default function Testimony({ data }) {
     <Fade bottom>
       <section className="container">
         <div className="row align-items-center">
-          <div className="col-auto" style={{ marginRight: 70 }}>
+          <div className="col-sm-6 d-none d-lg-block">
             <div
               className="testimonial-hero"
               style={{ margin: `30px 0 0 30px` }}
@@ -30,15 +30,20 @@ export default function Testimony({ data }) {
               />
             </div>
           </div>
-          <div className="col">
-            <h4 style={{ marginBottom: 40 }}>{data.name}</h4>
+
+          <div className="col-sm-6">
+            <h2 className="h4" style={{ marginBottom: 40 }}>
+              {data.name}
+            </h2>
             <Star value={data.rate} width={35} height={35} spacing={4}></Star>
-            <h5 className="h2 font-weight-light line-height-2 my-3">
-              {data.content}
-            </h5>
-            <span className="text-gray-500">
-              {data.familyName}, {data.familyOccupation}
-            </span>
+            <div>
+              <h3 className="h2 font-weight-light line-height-2 my-3">
+                {data.content}
+              </h3>
+              <span className="text-gray-500">
+                {data.familyName}, {data.familyOccupation}
+              </span>
+            </div>
             <div>
               <Button
                 className="btn px-5"

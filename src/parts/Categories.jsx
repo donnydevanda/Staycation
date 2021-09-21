@@ -8,14 +8,14 @@ export default function Categories({ data }) {
     if (category.itemId.length === 0) return null;
 
     return (
-      <section className="container" key={`category-${index1}`}>
-        <Fade bottom>
-          <h4 className="mb-3 font-weight-medium">{category.title}</h4>
-          <div className="container-grid">
+      <Fade bottom>
+        <section className="container" key={`category-${index1}`}>
+          <h4 className="mb-3 font-weight-medium">{category.name}</h4>
+          <div className="row">
             {category.itemId.map((item, index2) => {
               return (
                 <div
-                  className="item column-3 row-1"
+                  className="item col-sm-3 py-2"
                   key={`category-${index1}-item-${index2}`}
                 >
                   <Fade bottom delay={300 * index2}>
@@ -26,6 +26,7 @@ export default function Categories({ data }) {
                           <span className="font-weight-light">Choice</span>
                         </div>
                       )}
+
                       <figure className="img-wrapper" style={{ height: 180 }}>
                         <img
                           src={
@@ -37,6 +38,7 @@ export default function Categories({ data }) {
                           className="img-cover"
                         />
                       </figure>
+
                       <div className="meta-wrapper">
                         <Button
                           type="link"
@@ -55,8 +57,8 @@ export default function Categories({ data }) {
               );
             })}
           </div>
-        </Fade>
-      </section>
+        </section>
+      </Fade>
     );
   });
 }

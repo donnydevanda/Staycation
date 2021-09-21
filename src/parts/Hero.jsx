@@ -1,5 +1,6 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
+
 import ImageHero from "../assets/images/img-hero.jpg";
 import ImageHero_ from "../assets/images/img-hero-frame.jpg";
 import IconCities from "../assets/images/icons/icon-cities.svg";
@@ -9,6 +10,7 @@ import IconTreasure from "../assets/images/icons/icon-treasure.svg";
 import Button from "components/Button";
 
 import formatNumber from "utils/formatNumber";
+
 export default function Hero(props) {
   function showMostPicked() {
     window.scrollTo({
@@ -19,19 +21,18 @@ export default function Hero(props) {
 
   return (
     <Fade bottom>
-      <section className="container pt-4">
+      <section className="container pt-5">
         <div className="row align-items-center">
-          <div className="col-auto pr-5" style={{ width: 530 }}>
+          <div className="col-sm-6">
             <h1 className="font-weight-bold line-height-1 mb-3">
-              Forget Busy Work, <br />
-              Start Next Vacation
+              It's a Big World Out There, Go Explore!
             </h1>
             <p
-              className="mb-5 font-weight-light text-gray-500 w-75"
+              className=" font-weight-light text-gray-500 w-75"
               style={{ lineHeight: "170%" }}
             >
-              We provide what you need to enjoy yyour holiday with your family.
-              Time to make another memorable moments.
+              To get the best of your adventure you just need to leave and go
+              where you like. We are waiting for you.
             </p>
             <Button
               className="btn px-5"
@@ -88,8 +89,7 @@ export default function Hero(props) {
               </div>
             </div>
           </div>
-
-          <div className="col-6 pl-5">
+          <div className="col-sm-6 d-none d-lg-block">
             <div style={{ width: 520, height: 410 }}>
               <img
                 src={ImageHero}
