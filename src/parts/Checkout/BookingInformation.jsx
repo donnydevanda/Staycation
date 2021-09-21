@@ -1,6 +1,6 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import InputText from "components/Form/InputText";
+import InputText from "../../components/Form/InputText";
 
 export default function BookingInformation(props) {
   const { data, ItemDetails, checkout } = props;

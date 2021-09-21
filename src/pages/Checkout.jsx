@@ -2,20 +2,20 @@ import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
 
-import Header from "parts/Header";
-import Button from "components/Button";
+import Header from "../parts/Header";
+import Button from "../components/Button";
 import Stepper, {
   Numbering,
   Meta,
   MainContent,
   Controller,
-} from "components/Stepper";
+} from "../components/Stepper";
 
-import BookingInformation from "parts/Checkout/BookingInformation";
-import Payment from "parts/Checkout/Payment";
-import Completed from "parts/Checkout/Completed";
+import BookingInformation from "../parts/Checkout/BookingInformation";
+import Payment from "../parts/Checkout/Payment";
+import Completed from "../parts/Checkout/Completed";
 
-import { submitBooking } from "store/actions/checkout";
+import { submitBooking } from "../store/actions/checkout";
 
 class Checkout extends Component {
   state = {

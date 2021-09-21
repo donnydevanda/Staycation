@@ -4,17 +4,17 @@ import { connect } from "react-redux";
 
 import Fade from "react-reveal/Fade";
 
-import Header from "parts/Header";
-import PageDetailTitle from "parts/PageDetailTitle";
-import FeaturedImage from "parts/FeaturedImage";
-import PageDetailDescription from "parts/PageDetailDescription";
-import BookingForm from "parts/BookingForm";
-import Activities from "parts/Activities";
-import Testimony from "parts/Testimony";
-import Footer from "parts/Footer";
+import Header from "../parts/Header";
+import PageDetailTitle from "../parts/PageDetailTitle";
+import FeaturedImage from "../parts/FeaturedImage";
+import PageDetailDescription from "../parts/PageDetailDescription";
+import BookingForm from "../parts/BookingForm";
+import Activities from "../parts/Activities";
+import Testimony from "../parts/Testimony";
+import Footer from "../parts/Footer";
 
-import { checkoutBooking } from "store/actions/checkout";
-import { fetchPage } from "store/actions/page";
+import { checkoutBooking } from "../store/actions/checkout";
+import { fetchPage } from "../store/actions/page";
 
 class DetailsPage extends Component {
   componentDidMount() {

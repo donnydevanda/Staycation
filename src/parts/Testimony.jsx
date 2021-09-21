@@ -1,10 +1,10 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import TestimonyAccent from "assets/images/testimonial-landingpages-frame.jpg";
+import TestimonyAccent from "../assets/images/testimonial-landingpages-frame.jpg";
 
-import Star from "components/Star";
-import Button from "components/Button";
+import Star from "../components/Star";
+import Button from "../components/Button";
 
 export default function Testimony({ data }) {
   return (

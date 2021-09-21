@@ -1,11 +1,11 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import InputText from "components/Form/InputText";
-import InputFile from "components/Form/InputFile";
+import InputText from "../../components/Form/InputText";
+import InputFile from "../../components/Form/InputFile";
 
-import logoBca from "assets/images/logo-bca.jpg";
-import logoMandiri from "assets/images/logo-mandiri.jpg";
+import logoBca from "../../assets/images/logo-bca.jpg";
+import logoMandiri from "../../assets/images/logo-mandiri.jpg";
 
 export default function Payment(props) {
   const { data, ItemDetails, checkout } = props;

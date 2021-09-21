@@ -1,7 +1,7 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import Button from "components/Button";
+import Button from "../components/Button";
 
 export default function MostPicked(props) {
   return (

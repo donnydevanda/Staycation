@@ -7,9 +7,9 @@ import IconCities from "../assets/images/icons/icon-cities.svg";
 import IconTraveler from "../assets/images/icons/icon-traveler.svg";
 import IconTreasure from "../assets/images/icons/icon-treasure.svg";
 
-import Button from "components/Button";
+import Button from "../components/Button";
 
-import formatNumber from "utils/formatNumber";
+import formatNumber from "../utils/formatNumber";
 
 export default function Hero(props) {
   function showMostPicked() {
