@@ -69,8 +69,6 @@ class Checkout extends Component {
   render() {
     const { data } = this.state;
     const { checkout, page } = this.props;
-    console.log(checkout.date.startDate);
-    console.log(checkout.date.endDate);
     if (!checkout)
       return (
         <div className="container">
