@@ -12,6 +12,10 @@ import Spinner from "../assets/images/spinner.svg";
 
 import { fetchPage } from "../store/actions/page";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 class LandingPage extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +37,11 @@ class LandingPage extends Component {
     if (!page.hasOwnProperty("landingPage"))
       return (
         <>
-          <div className="container text-center">
+          <div
+            className="container text-center"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+          >
             <h3 style={{ marginTop: 350 }}>Please Wait ...</h3>
             <p>This site takes a little time to wake the dynos :)</p>
             <img

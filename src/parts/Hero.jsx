@@ -1,5 +1,4 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
 
 import ImageHero from "../assets/images/img-hero.jpg";
 import ImageHero_ from "../assets/images/img-hero-frame.jpg";
@@ -20,10 +19,10 @@ export default function Hero(props) {
   }
 
   return (
-    <Fade bottom>
-      <section className="container pt-5">
-        <div className="row align-items-center">
-          <div className="col-sm-6">
+    <section className="container pt-5">
+      <div className="row align-items-center">
+        <div className="col-sm-6">
+          <div data-aos="fade-up" data-aos-duration="600">
             <h1 className="font-weight-bold line-height-1 mb-3">
               It's a Big World Out There, Go Explore!
             </h1>
@@ -42,71 +41,73 @@ export default function Hero(props) {
             >
               Show Me Now
             </Button>
-            <div className="row mt-5">
-              <div className="col-auto" style={{ marginRight: 0 }}>
-                <img
-                  width="36"
-                  height="36"
-                  src={IconTraveler}
-                  alt={`${props.data.travelers} Travelers`}
-                />
-                <h2 className="h6 mt-3">
-                  {formatNumber(props.data.travelers)}{" "}
-                  <span className="text-gray-600 font-weight-light">
-                    Travelers
-                  </span>
-                </h2>
-              </div>
-
-              <div className="col-auto" style={{ marginRight: 0 }}>
-                <img
-                  width="36"
-                  height="36"
-                  src={IconTreasure}
-                  alt={`${props.data.treasure} Treasures`}
-                />
-                <h2 className="h6 mt-3">
-                  {formatNumber(props.data.treasures)}{" "}
-                  <span className="text-gray-600 font-weight-light">
-                    Treasures
-                  </span>
-                </h2>
-              </div>
-
-              <div className="col-auto" style={{ marginRight: 0 }}>
-                <img
-                  width="36"
-                  height="36"
-                  src={IconCities}
-                  alt={`${props.data.cities} Cities`}
-                />
-                <h2 className="h6 mt-3">
-                  {formatNumber(props.data.cities)}{" "}
-                  <span className="text-gray-600 font-weight-light">
-                    Cities
-                  </span>
-                </h2>
-              </div>
-            </div>
           </div>
-          <div className="col-sm-6 d-none d-lg-block">
-            <div style={{ width: 520, height: 410 }}>
+          <div className="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+            <div className="col-auto" style={{ marginRight: 0 }}>
               <img
-                src={ImageHero}
-                alt="Room with couches"
-                className="img-fluid position-absolute"
-                style={{ margin: "-30px 0 0 -30px", zIndex: 1 }}
+                width="36"
+                height="36"
+                src={IconTraveler}
+                alt={`${props.data.travelers} Travelers`}
               />
+              <h2 className="h6 mt-3">
+                {formatNumber(props.data.travelers)}{" "}
+                <span className="text-gray-600 font-weight-light">
+                  Travelers
+                </span>
+              </h2>
+            </div>
+
+            <div className="col-auto" style={{ marginRight: 0 }}>
               <img
-                src={ImageHero_}
-                alt="Room with couches frame"
-                className="img-fluid position-absolute"
-                style={{ margin: "0 -15px -15px 0" }}
+                width="36"
+                height="36"
+                src={IconTreasure}
+                alt={`${props.data.treasure} Treasures`}
               />
+              <h2 className="h6 mt-3">
+                {formatNumber(props.data.treasures)}{" "}
+                <span className="text-gray-600 font-weight-light">
+                  Treasures
+                </span>
+              </h2>
+            </div>
+
+            <div className="col-auto" style={{ marginRight: 0 }}>
+              <img
+                width="36"
+                height="36"
+                src={IconCities}
+                alt={`${props.data.cities} Cities`}
+              />
+              <h2 className="h6 mt-3">
+                {formatNumber(props.data.cities)}{" "}
+                <span className="text-gray-600 font-weight-light">Cities</span>
+              </h2>
             </div>
           </div>
         </div>
-      </section>
-    </Fade>
+        <div
+          className="col-sm-6 d-none d-lg-block"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          <div style={{ width: 520, height: 410 }}>
+            <img
+              src={ImageHero}
+              alt="Room with couches"
+              className="img-fluid position-absolute"
+              style={{ margin: "-30px 0 0 -30px", zIndex: 1 }}
+            />
+            <img
+              src={ImageHero_}
+              alt="Room with couches frame"
+              className="img-fluid position-absolute"
+              style={{ margin: "0 -15px -15px 0" }}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

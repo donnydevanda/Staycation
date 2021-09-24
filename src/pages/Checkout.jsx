@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
 
 import Header from "../parts/Header";
@@ -148,18 +147,16 @@ class Checkout extends Component {
                     data.lastName !== "" &&
                     data.email !== "" &&
                     data.phoneNumber !== "" && (
-                      <Fade>
-                        <Button
-                          className="btn mb-3"
-                          type="button"
-                          isBlock
-                          isPrimary
-                          hasShadow
-                          onClick={nextStep}
-                        >
-                          Continue to Book
-                        </Button>
-                      </Fade>
+                      <Button
+                        className="btn mb-3"
+                        type="button"
+                        isBlock
+                        isPrimary
+                        hasShadow
+                        onClick={nextStep}
+                      >
+                        Continue to Book
+                      </Button>
                     )}
                   <Button
                     className="btn"
@@ -178,18 +175,16 @@ class Checkout extends Component {
                   {data.proofPayment !== "" &&
                     data.bankName !== "" &&
                     data.bankHolder !== "" && (
-                      <Fade>
-                        <Button
-                          className="btn mb-3"
-                          type="button"
-                          isBlock
-                          isPrimary
-                          hasShadow
-                          onClick={() => this._Submit(nextStep)}
-                        >
-                          Continue to Book
-                        </Button>
-                      </Fade>
+                      <Button
+                        className="btn mb-3"
+                        type="button"
+                        isBlock
+                        isPrimary
+                        hasShadow
+                        onClick={() => this._Submit(nextStep)}
+                      >
+                        Continue to Book
+                      </Button>
                     )}
                   <Button
                     className="btn"

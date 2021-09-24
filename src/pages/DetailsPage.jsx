@@ -2,8 +2,6 @@ import React, { Component, Fragment } from "react";
 
 import { connect } from "react-redux";
 
-import Fade from "react-reveal/Fade";
-
 import Header from "../parts/Header";
 import PageDetailTitle from "../parts/PageDetailTitle";
 import FeaturedImage from "../parts/FeaturedImage";
@@ -38,31 +36,27 @@ class DetailsPage extends Component {
     ];
 
     return (
-      <Fragment>
+      <>
         <Header {...this.props} />
         <PageDetailTitle breadcrumb={breadcrumb} data={page[match.params.id]} />
         <FeaturedImage data={page[match.params.id].imageId} />
         <section className="container">
           <div className="row">
             <div className="col-sm-7">
-              <Fade bottom>
-                <PageDetailDescription data={page[match.params.id]} />
-              </Fade>
+              <PageDetailDescription data={page[match.params.id]} />
             </div>
             <div className="col-sm-5">
-              <Fade bottom>
-                <BookingForm
-                  itemDetails={page[match.params.id]}
-                  startBooking={this.props.checkoutBooking}
-                />
-              </Fade>
+              <BookingForm
+                itemDetails={page[match.params.id]}
+                startBooking={this.props.checkoutBooking}
+              />
             </div>
           </div>
         </section>
         <Activities data={page[match.params.id].activityId} />
         <Testimony data={page[match.params.id].testimonial} />
         <Footer />
-      </Fragment>
+      </>
     );
   }
 }

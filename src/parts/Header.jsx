@@ -13,7 +13,11 @@ export default function Header(props) {
 
   if (props.isCentered)
     return (
-      <header>
+      <header
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+      >
         <nav className="container navbar navbar-expand-lg navbar-light">
           <div className="mx-auto">
             <IconText />
@@ -23,7 +27,11 @@ export default function Header(props) {
     );
 
   return (
-    <header>
+    <header
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="500"
+    >
       <nav className="container navbar navbar-expand-lg navbar-light">
         <IconText />
         <div className="collapse navbar-collapse">
