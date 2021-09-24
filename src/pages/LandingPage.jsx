@@ -8,6 +8,8 @@ import Categories from "../parts/Categories";
 import Testimony from "../parts/Testimony";
 import Footer from "../parts/Footer";
 
+import Spinner from "../assets/images/spinner.svg";
+
 import { fetchPage } from "../store/actions/page";
 
 class LandingPage extends Component {
@@ -30,7 +32,21 @@ class LandingPage extends Component {
   render() {
     const { page } = this.props;
 
-    if (!page.hasOwnProperty("landingPage")) return null;
+    if (!page.hasOwnProperty("landingPage"))
+      return (
+        <>
+          <div className="container text-center">
+            <h3 style={{ marginTop: 350 }}>Please Wait ...</h3>
+            <p>This site takes a little time to wake the dynos :)</p>
+            <img
+              className="img-fluid mx-0 my-0"
+              style={{ height: 100, width: 100 }}
+              src={Spinner}
+              alt=""
+            />
+          </div>
+        </>
+      );
 
     return (
       <Fragment>
