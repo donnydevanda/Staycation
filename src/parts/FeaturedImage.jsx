@@ -11,6 +11,8 @@ export default function FeaturedImage({ data }) {
               className={`item ${index > 0 ? "column-4" : "column-8"} ${
                 index > 0 ? "row-1" : "row-2"
               }`}
+              data-aos="fade-up"
+              data-aos-duration="1000"
             >
               <div className="card h-100">
                 <figure className="img-wrapper">

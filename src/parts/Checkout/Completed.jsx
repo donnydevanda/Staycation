@@ -11,7 +11,7 @@ export default function Completed() {
             className="img-fluid"
             alt="completed checkout apartment"
           />
-          <p className="text-gray-500">
+          <p className="text-gray-600">
             We will inform you via email later once the transaction has been
             accepted
           </p>

@@ -19,13 +19,15 @@ export default function Testimony({ data }) {
               src={`https://admin-bwamern.herokuapp.com/${data.imageUrl}`}
               alt="Testimonial"
               className="img-fluid position-absolute"
-              style={{ zIndex: 1, height: 500, width: 350 }}
+              style={{ zIndex: 1 }}
             />
             <img
               src={TestimonyAccent}
               alt="Testimonial Frame"
               className="img-fluid position-absolute"
-              style={{ margin: `-30px 0 0 -30px`, height: 500, width: 350 }}
+              style={{
+                margin: `-30px 0 0 -30px`,
+              }}
             />
           </div>
         </div>

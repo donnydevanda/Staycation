@@ -19,7 +19,7 @@ export default function BookingInformation(props) {
               <div className="col">
                 <div className="meta-wrapper">
                   <h5>{ItemDetails.title}</h5>
-                  <span className="text-gray-500">
+                  <span className="text-gray-600">
                     {ItemDetails.city}, {ItemDetails.country}
                   </span>
                 </div>
@@ -27,7 +27,7 @@ export default function BookingInformation(props) {
               <div className="col-auto">
                 <span>
                   ${+checkout.duration * ItemDetails.price} USD
-                  <span className="text-gray-500"> per </span>
+                  <span className="text-gray-600"> per </span>
                   {checkout.duration} {ItemDetails.unit}
                   {+checkout.duration > 1 ? "s" : ""}
                 </span>

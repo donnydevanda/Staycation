@@ -31,7 +31,7 @@ class DetailsPage extends Component {
     if (!page[match.params.id]) return null;
 
     const breadcrumb = [
-      { pageTitle: "Home", pageHref: "" },
+      { pageTitle: "Home", pageHref: "/" },
       { pageTitle: "Details", pageHref: "" },
     ];
 
@@ -40,7 +40,11 @@ class DetailsPage extends Component {
         <Header {...this.props} />
         <PageDetailTitle breadcrumb={breadcrumb} data={page[match.params.id]} />
         <FeaturedImage data={page[match.params.id].imageId} />
-        <section className="container">
+        <section
+          className="container"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <div className="row">
             <div className="col-sm-7">
               <PageDetailDescription data={page[match.params.id]} />

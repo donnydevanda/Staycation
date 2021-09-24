@@ -87,7 +87,7 @@ class BookingForm extends Component {
         <h4 className="mb-3">Start Booking</h4>
         <h5 className="h2 text-teal mb-4">
           ${itemDetails.price}{" "}
-          <span className="text-gray-500 font-weight-light">
+          <span className="text-gray-600 font-weight-light">
             per {itemDetails.unit}
           </span>
         </h5>
@@ -106,7 +106,7 @@ class BookingForm extends Component {
         <InputDate onChange={this.updateData} name="date" value={data.date} />
 
         <h6
-          className="text-gray-500 font-weight-light"
+          className="text-gray-600 font-weight-light"
           style={{ marginBottom: 40 }}
         >
           You will pay{" "}

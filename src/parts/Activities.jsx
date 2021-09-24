@@ -7,11 +7,22 @@ export default function Activities({ data }) {
 
   return (
     <section className="container">
-      <h3 className="h4 mb-3 font-weight-medium">Nearby Activities</h3>
+      <h3
+        className="h4 mb-3 font-weight-medium"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
+        Nearby Activities
+      </h3>
       <div className="row">
         {data.map((item, index2) => {
           return (
-            <div className="item col-sm-3" key={`activity-item-${index2}`}>
+            <div
+              className="item col-sm-3"
+              key={`activity-item-${index2}`}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <div className="card">
                 {item.isPopular && (
                   <div className="tag">
@@ -37,7 +48,7 @@ export default function Activities({ data }) {
                   >
                     <h4>{item.name}</h4>
                   </Button>
-                  <span className="text-gray-500">{item.type}</span>
+                  <span className="text-gray-600">{item.type}</span>
                 </div>
               </div>
             </div>
