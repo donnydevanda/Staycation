@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import Header from "../parts/Header";
@@ -19,8 +19,6 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
-
     if (!this.props.page.landingPage) {
       this.props.fetchPage(
         `https://staycationserver.herokuapp.com/api/v1/member/landing-page`,
@@ -49,7 +47,7 @@ class LandingPage extends Component {
       );
 
     return (
-      <Fragment>
+      <>
         <Header {...this.props} />
         <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} />
         <MostPicked
@@ -59,7 +57,7 @@ class LandingPage extends Component {
         <Categories data={page.landingPage.category} />
         <Testimony data={page.landingPage.testimonial} />
         <Footer />
-      </Fragment>
+      </>
     );
   }
 }

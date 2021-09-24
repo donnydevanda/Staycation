@@ -17,7 +17,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="col-sm-3">
-            <h6 className="mt-2">Explore</h6>
+            <p className="h6 mt-2">Explore</p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 <Button type="link" href="/register">
@@ -37,7 +37,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-sm-3">
-            <h6 className="mt-2">Explore Us</h6>
+            <p className="h6 mt-2">Explore Us</p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 <Button type="link" href="/careers">
@@ -57,7 +57,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-sm-3">
-            <h6 className="mt-2">Connect Us</h6>
+            <p className="h6 mt-2">Connect Us</p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 <Button

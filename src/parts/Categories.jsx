@@ -10,7 +10,7 @@ export default function Categories({ data }) {
     return (
       <Fade bottom>
         <section className="container" key={`category-${index1}`}>
-          <h4 className="mb-3 font-weight-medium">{category.name}</h4>
+          <h3 className="h4 mb-3 font-weight-medium">{category.name}</h3>
           <div className="row">
             {category.itemId.map((item, index2) => {
               return (
@@ -45,9 +45,9 @@ export default function Categories({ data }) {
                           href={`/properties/${item._id}`}
                           className="stretched-link d-block text-gray-800"
                         >
-                          <h5 className="h4">{item.title}</h5>
+                          <p className="h6">{item.title}</p>
                         </Button>
-                        <span className="text-gray-500">
+                        <span className="text-gray-600">
                           {item.city}, {item.country}
                         </span>
                       </div>

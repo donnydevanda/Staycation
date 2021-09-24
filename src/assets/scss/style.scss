@@ -48,7 +48,7 @@
 
 .brand-text-icon {
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 600;
   font-family: "Poppins", sans-serif;
   color: $primary;
   &:hover {
@@ -207,7 +207,7 @@ section {
 .testimonial-hero,
 .testimonial-hero img {
   width: 365px;
-  height: 500px;
+  height: 600px;
 }
 
 footer {
@@ -216,7 +216,7 @@ footer {
 
   .brand-tagline {
     margin-top: 8px;
-    color: $gray-500;
+    color: $gray-600;
     font-weight: 300;
   }
 
@@ -225,7 +225,7 @@ footer {
     border: 0;
     a,
     span {
-      color: $gray-500;
+      color: $gray-600;
       font-weight: 300;
     }
     a {
@@ -237,13 +237,13 @@ footer {
   .copyrights {
     margin: 50px 0;
     font-weight: 300;
-    color: $gray-500;
+    color: $gray-600;
   }
 }
 
 main {
   p {
-    color: $gray-500;
+    color: $gray-600;
     font-weight: 300;
   }
 }

@@ -7,7 +7,7 @@ export default function MostPicked(props) {
   return (
     <section className="container" ref={props.refMostPicked}>
       <Fade bottom>
-        <h4 className="mb-3">Most Picked</h4>
+        <h3 className="h4 mb-3">Most Picked</h3>
         <div className="container-grid">
           {props.data.map((item, index) => {
             return (
@@ -43,7 +43,7 @@ export default function MostPicked(props) {
                         className="stretched-link d-block text-white"
                         href={`/properties/${item._id}`}
                       >
-                        <h5>{item.title}</h5>
+                        <p className="h6">{item.title}</p>
                       </Button>
                       <span className="d-none d-lg-block">
                         {item.city}, {item.country}

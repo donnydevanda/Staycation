@@ -28,7 +28,7 @@ export default function Hero(props) {
               It's a Big World Out There, Go Explore!
             </h1>
             <p
-              className=" font-weight-light text-gray-500 w-75"
+              className=" font-weight-light text-gray-600 w-75"
               style={{ lineHeight: "170%" }}
             >
               To get the best of your adventure you just need to leave and go
@@ -50,12 +50,12 @@ export default function Hero(props) {
                   src={IconTraveler}
                   alt={`${props.data.travelers} Travelers`}
                 />
-                <h6 className="mt-3">
+                <h2 className="h6 mt-3">
                   {formatNumber(props.data.travelers)}{" "}
-                  <span className="text-gray-500 font-weight-light">
+                  <span className="text-gray-600 font-weight-light">
                     Travelers
                   </span>
-                </h6>
+                </h2>
               </div>
 
               <div className="col-auto" style={{ marginRight: 0 }}>
@@ -65,12 +65,12 @@ export default function Hero(props) {
                   src={IconTreasure}
                   alt={`${props.data.treasure} Treasures`}
                 />
-                <h6 className="mt-3">
+                <h2 className="h6 mt-3">
                   {formatNumber(props.data.treasures)}{" "}
-                  <span className="text-gray-500 font-weight-light">
+                  <span className="text-gray-600 font-weight-light">
                     Treasures
                   </span>
-                </h6>
+                </h2>
               </div>
 
               <div className="col-auto" style={{ marginRight: 0 }}>
@@ -80,12 +80,12 @@ export default function Hero(props) {
                   src={IconCities}
                   alt={`${props.data.cities} Cities`}
                 />
-                <h6 className="mt-3">
+                <h2 className="h6 mt-3">
                   {formatNumber(props.data.cities)}{" "}
-                  <span className="text-gray-500 font-weight-light">
+                  <span className="text-gray-600 font-weight-light">
                     Cities
                   </span>
-                </h6>
+                </h2>
               </div>
             </div>
           </div>
