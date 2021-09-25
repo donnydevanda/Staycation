@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
@@ -21,10 +21,10 @@ export default function Button(props) {
     return (
       <span className={className.join(" ")} style={props.style}>
         {props.isLoading ? (
-          <Fragment>
+          <>
             <span className="spinner-broder spinner-border-sm mx-5"></span>
             <span className="sr-only">Loading...</span>
-          </Fragment>
+          </>
         ) : (
           props.children
         )}

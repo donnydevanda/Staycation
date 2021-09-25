@@ -11,11 +11,7 @@ export default function PageDetailSescription({ data }) {
           ? "No Features"
           : data.featureId.map((feature, index) => {
               return (
-                <div
-                  key={`feature-${index}`}
-                  className="col-3"
-                  style={{ marginBottom: 20 }}
-                >
+                <div key={`feature-${index}`} className="col-3 mb-4">
                   <img
                     width="38"
                     className="d-block mb-2"

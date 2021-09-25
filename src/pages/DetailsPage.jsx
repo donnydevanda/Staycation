@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
@@ -16,8 +16,6 @@ import { fetchPage } from "../store/actions/page";
 
 class DetailsPage extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
-
     if (!this.props.page[this.props.match.params.id])
       this.props.fetchPage(
         `https://staycationserver.herokuapp.com/api/v1/member/detail-page/${this.props.match.params.id}`,
@@ -38,27 +36,28 @@ class DetailsPage extends Component {
     return (
       <>
         <Header {...this.props} />
-        <PageDetailTitle breadcrumb={breadcrumb} data={page[match.params.id]} />
-        <FeaturedImage data={page[match.params.id].imageId} />
-        <section
-          className="container"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <div className="row">
-            <div className="col-sm-7">
-              <PageDetailDescription data={page[match.params.id]} />
+        <div className="container">
+          <PageDetailTitle
+            breadcrumb={breadcrumb}
+            data={page[match.params.id]}
+          />
+          <FeaturedImage data={page[match.params.id].imageId} />
+          <section data-aos="fade-up" data-aos-duration="1000">
+            <div className="row">
+              <div className="col-sm-7">
+                <PageDetailDescription data={page[match.params.id]} />
+              </div>
+              <div className="col-sm-5">
+                <BookingForm
+                  itemDetails={page[match.params.id]}
+                  startBooking={this.props.checkoutBooking}
+                />
+              </div>
             </div>
-            <div className="col-sm-5">
-              <BookingForm
-                itemDetails={page[match.params.id]}
-                startBooking={this.props.checkoutBooking}
-              />
-            </div>
-          </div>
-        </section>
-        <Activities data={page[match.params.id].activityId} />
-        <Testimony data={page[match.params.id].testimonial} />
+          </section>
+          <Activities data={page[match.params.id].activityId} />
+          <Testimony data={page[match.params.id].testimonial} />
+        </div>
         <Footer />
       </>
     );

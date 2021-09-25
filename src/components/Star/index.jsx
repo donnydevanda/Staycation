@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import propTypes from "prop-types";
 
@@ -59,7 +59,7 @@ export default function Star({ className, value, height, width, spacing }) {
   }
 
   return (
-    <Fragment>
+    <>
       <div
         className={["stars", className].join(" ")}
         style={{ height: height }}
@@ -67,7 +67,7 @@ export default function Star({ className, value, height, width, spacing }) {
         {starPlaceholder}
         {star}
       </div>
-    </Fragment>
+    </>
   );
 }
 

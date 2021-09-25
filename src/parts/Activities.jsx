@@ -6,7 +6,7 @@ export default function Activities({ data }) {
   if (data.length === 0) return null;
 
   return (
-    <section className="container">
+    <section>
       <h3
         className="h4 mb-3 font-weight-medium"
         data-aos="fade-right"
@@ -29,6 +29,7 @@ export default function Activities({ data }) {
                     Popular <span className="font-weight-light">Choice</span>
                   </div>
                 )}
+
                 <figure className="img-wrapper">
                   <img
                     src={
@@ -40,6 +41,7 @@ export default function Activities({ data }) {
                     className="img-cover"
                   />
                 </figure>
+
                 <div className="meta-wrapper">
                   <Button
                     type="link"

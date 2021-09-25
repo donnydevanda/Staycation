@@ -4,7 +4,7 @@ import Breadcrumb from "../components/Breadcrumb";
 
 export default function PageDetailTitle({ data, breadcrumb }) {
   return (
-    <section className="container">
+    <section>
       <div className="row align-items-center">
         <div
           className="col d-none d-lg-block"
