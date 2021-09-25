@@ -4,7 +4,7 @@ import Button from "../components/Button";
 
 export default function MostPicked(props) {
   return (
-    <section className="container" ref={props.refMostPicked}>
+    <section ref={props.refMostPicked}>
       <h3 className="h4 mb-3" data-aos="fade-right" data-aos-duration="1000">
         Most Picked
       </h3>
@@ -16,8 +16,8 @@ export default function MostPicked(props) {
         {props.data.map((item, index) => {
           return (
             <div
-              key={`mostpicked-${index}`}
-              className={`item column-4${index === 0 ? " row-2" : " row-1"}`}
+              key={`most-picked-${index}`}
+              className={`item column-4 ${index === 0 ? "row-2" : "row-1"}`}
             >
               <div className="card card-featured">
                 <div className="tag d-none d-lg-block">
@@ -41,7 +41,7 @@ export default function MostPicked(props) {
                   <Button
                     type="link"
                     className="stretched-link d-block text-white"
-                    href={`/properties/${item._id}`}
+                    href={`/details/${item._id}`}
                   >
                     <p className="h6">{item.title}</p>
                   </Button>

@@ -1,12 +1,13 @@
 import React from "react";
 
 import ImageHero from "../assets/images/img-hero.webp";
-import ImageHero_ from "../assets/images/img-hero-frame.webp";
-import IconCities from "../assets/images/icons/icon-cities.svg";
+import ImageHeroFrame from "../assets/images/img-hero-frame.webp";
+import IconCity from "../assets/images/icons/icon-city.svg";
 import IconTraveler from "../assets/images/icons/icon-traveler.svg";
 import IconTreasure from "../assets/images/icons/icon-treasure.svg";
 
 import Button from "../components/Button";
+import Stats from "./Stats";
 
 import formatNumber from "../utils/formatNumber";
 
@@ -19,79 +20,52 @@ export default function Hero(props) {
   }
 
   return (
-    <section className="container pt-5">
-      <div className="row align-items-center">
+    <section>
+      <div
+        className="row align-items-center pt-5"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <div className="col-sm-6">
-          <div data-aos="fade-up" data-aos-duration="600">
-            <h1 className="font-weight-bold line-height-1 mb-3">
-              It's a Big World Out There, Go Explore!
-            </h1>
-            <p
-              className=" font-weight-light text-gray-600 w-75"
-              style={{ lineHeight: "170%" }}
-            >
-              To get the best of your adventure you just need to leave and go
-              where you like. We are waiting for you.
-            </p>
-            <Button
-              className="btn px-5"
-              hasShadow
-              isPrimary
-              onClick={showMostPicked}
-            >
-              Show Me Now
-            </Button>
-          </div>
-          <div className="row mt-5" data-aos="fade-up" data-aos-duration="1000">
-            <div className="col-auto" style={{ marginRight: 0 }}>
-              <img
-                width="36"
-                height="36"
-                src={IconTraveler}
-                alt={`${props.data.travelers} Travelers`}
-              />
-              <h2 className="h6 mt-3">
-                {formatNumber(props.data.travelers)}{" "}
-                <span className="text-gray-600 font-weight-light">
-                  Travelers
-                </span>
-              </h2>
-            </div>
+          <h1 className="font-weight-bold line-height-1">
+            It's a Big World Out There, Go Explore!
+          </h1>
+          <p
+            className=" font-weight-light text-gray-600 w-75 my-3"
+            style={{ lineHeight: "170%" }}
+          >
+            To get the best of your adventure you just need to leave and go
+            where you like. We are waiting for you.
+          </p>
+          <Button
+            className="btn px-5"
+            hasShadow
+            isPrimary
+            onClick={showMostPicked}
+          >
+            Show Me Now
+          </Button>
 
-            <div className="col-auto" style={{ marginRight: 0 }}>
-              <img
-                width="36"
-                height="36"
-                src={IconTreasure}
-                alt={`${props.data.treasure} Treasures`}
-              />
-              <h2 className="h6 mt-3">
-                {formatNumber(props.data.treasures)}{" "}
-                <span className="text-gray-600 font-weight-light">
-                  Treasures
-                </span>
-              </h2>
-            </div>
-
-            <div className="col-auto" style={{ marginRight: 0 }}>
-              <img
-                width="36"
-                height="36"
-                src={IconCities}
-                alt={`${props.data.cities} Cities`}
-              />
-              <h2 className="h6 mt-3">
-                {formatNumber(props.data.cities)}{" "}
-                <span className="text-gray-600 font-weight-light">Cities</span>
-              </h2>
-            </div>
+          <div className="row mt-5">
+            <Stats
+              icon={IconTraveler}
+              count={formatNumber(props.data.travelers)}
+              name={"Travelers"}
+            />
+            <Stats
+              icon={IconTreasure}
+              count={formatNumber(props.data.treasures)}
+              name={"Treasures"}
+            />
+            <Stats
+              icon={IconCity}
+              count={formatNumber(props.data.cities)}
+              name={"Cities"}
+            />
           </div>
         </div>
-        <div
-          className="col-sm-6 d-none d-lg-block"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
+
+        <div className="col-sm-6 d-none d-lg-block">
           <div style={{ width: 520, height: 410 }}>
             <img
               src={ImageHero}
@@ -100,7 +74,7 @@ export default function Hero(props) {
               style={{ margin: "-30px 0 0 -30px", zIndex: 1 }}
             />
             <img
-              src={ImageHero_}
+              src={ImageHeroFrame}
               alt="Room with couches frame"
               className="img-fluid position-absolute"
               style={{ margin: "0 -15px -15px 0" }}

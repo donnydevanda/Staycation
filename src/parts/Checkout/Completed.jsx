@@ -1,5 +1,5 @@
 import React from "react";
-import CompletedIllustration from "../../assets/images/completed.webp";
+import CompletedIllustration from "../../assets/images/img-completed.webp";
 
 export default function Completed() {
   return (

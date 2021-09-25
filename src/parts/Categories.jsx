@@ -7,7 +7,7 @@ export default function Categories({ data }) {
     if (category.itemId.length === 0) return null;
 
     return (
-      <section className="container" key={`category-${index1}`}>
+      <section key={`category-${index1}`}>
         <h3
           className="h4 mb-3 font-weight-medium"
           data-aos="fade-right"
@@ -15,11 +15,11 @@ export default function Categories({ data }) {
         >
           {category.name}
         </h3>
-        <div className="row">
+        <div className="row py-2">
           {category.itemId.map((item, index2) => {
             return (
               <div
-                className="item col-sm-3 py-2"
+                className="item col-sm-3"
                 key={`category-${index1}-item-${index2}`}
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -30,6 +30,7 @@ export default function Categories({ data }) {
                       Popular <span className="font-weight-light">Choice</span>
                     </div>
                   )}
+
                   <figure className="img-wrapper" style={{ height: 180 }}>
                     <img
                       src={
@@ -41,10 +42,11 @@ export default function Categories({ data }) {
                       className="img-cover"
                     />
                   </figure>
+
                   <div className="meta-wrapper">
                     <Button
                       type="link"
-                      href={`/properties/${item._id}`}
+                      href={`/details/${item._id}`}
                       className="stretched-link d-block text-gray-800"
                     >
                       <p className="h6">{item.title}</p>

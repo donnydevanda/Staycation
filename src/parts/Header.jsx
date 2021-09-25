@@ -1,6 +1,5 @@
 import React from "react";
 
-import Button from "../components/Button";
 import IconText from "./IconText";
 
 import { useLocation } from "react-router-dom";
@@ -11,7 +10,7 @@ export default function Header(props) {
     return locationNow.pathname === path ? "active" : "";
   };
 
-  if (props.isCentered)
+  if (props.isCentered) {
     return (
       <header
         data-aos="fade-down"
@@ -25,6 +24,7 @@ export default function Header(props) {
         </nav>
       </header>
     );
+  }
 
   return (
     <header
@@ -37,24 +37,24 @@ export default function Header(props) {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav ml-auto">
             <li className={`nav-item ${getNavLinkClass("/")}`}>
-              <Button className="nav-link" type="link" href="/">
+              <a className="nav-link" type="link" href="/">
                 Home
-              </Button>
+              </a>
             </li>
             <li className={`nav-item ${getNavLinkClass("/browse")}`}>
-              <Button className="nav-link" type="link" href="/browse">
+              <a className="nav-link" type="link" href="/browse">
                 Browse
-              </Button>
+              </a>
             </li>
             <li className={`nav-item ${getNavLinkClass("/blog")}`}>
-              <Button className="nav-link" type="link" href="/blog">
+              <a className="nav-link" type="link" href="/blog">
                 Blog
-              </Button>
+              </a>
             </li>
             <li className={`nav-item ${getNavLinkClass("/about-us")}`}>
-              <Button className="nav-link" type="link" href="/about-us">
+              <a className="nav-link" type="link" href="/about-us">
                 About Us
-              </Button>
+              </a>
             </li>
           </ul>
         </div>

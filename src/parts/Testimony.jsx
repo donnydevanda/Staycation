@@ -1,13 +1,13 @@
 import React from "react";
 
-import TestimonyAccent from "../assets/images/testimonial-landingpages-frame.webp";
+import TestimonyAccent from "../assets/images/img-testi-frame.webp";
 
 import Star from "../components/Star";
 import Button from "../components/Button";
 
 export default function Testimony({ data }) {
   return (
-    <section className="container">
+    <section>
       <div
         className="row align-items-center"
         data-aos="fade-up"
@@ -19,7 +19,7 @@ export default function Testimony({ data }) {
               src={`https://admin-bwamern.herokuapp.com/${data.imageUrl}`}
               alt="Testimonial"
               className="img-fluid position-absolute"
-              style={{ zIndex: 1 }}
+              style={{ zIndex: 1, height: `100%`, width: 450 }}
             />
             <img
               src={TestimonyAccent}
@@ -27,6 +27,8 @@ export default function Testimony({ data }) {
               className="img-fluid position-absolute"
               style={{
                 margin: `-30px 0 0 -30px`,
+                height: `100%`,
+                width: 450,
               }}
             />
           </div>
@@ -35,14 +37,12 @@ export default function Testimony({ data }) {
         <div className="col-sm-6">
           <h4 style={{ marginBottom: 40 }}>{data.name}</h4>
           <Star value={data.rate} width={35} height={35} spacing={4}></Star>
-          <div>
-            <h4 className="h2 font-weight-light line-height-2 my-3">
-              {data.content}
-            </h4>
-            <span className="text-gray-600">
-              {data.familyName}, {data.familyOccupation}
-            </span>
-          </div>
+          <h4 className="h2 font-weight-light line-height-2 my-3">
+            {data.content}
+          </h4>
+          <span className="text-gray-600">
+            {data.familyName}, {data.familyOccupation}
+          </span>
           <div>
             <Button
               className="btn px-5"

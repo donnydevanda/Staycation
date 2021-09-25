@@ -1,7 +1,5 @@
 import React from "react";
 
-import Button from "../components/Button";
-
 import IconText from "./IconText";
 
 export default function Footer() {
@@ -16,62 +14,47 @@ export default function Footer() {
               possible.
             </p>
           </div>
+
           <div className="col-sm-3">
             <p className="h6 mt-2">Explore</p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button type="link" href="/register">
-                  New Account
-                </Button>
+                <a href="/register">New Account</a>
               </li>
               <li className="list-group-item">
-                <Button type="link" href="/properties">
-                  Start Booking
-                </Button>
+                <a href="/properties">Start Booking</a>
               </li>
               <li className="list-group-item">
-                <Button type="link" href="/payments">
-                  Payments
-                </Button>
+                <a href="/payments">Payments</a>
               </li>
             </ul>
           </div>
+
           <div className="col-sm-3">
             <p className="h6 mt-2">Explore Us</p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button type="link" href="/careers">
-                  Careers
-                </Button>
+                <a href="/careers">Careers</a>
               </li>
               <li className="list-group-item">
-                <Button type="link" href="/privacy">
-                  Our Privacy
-                </Button>
+                <a href="/privacy">Our Privacy</a>
               </li>
               <li className="list-group-item">
-                <Button type="link" href="/terms">
-                  Terms & Conditions
-                </Button>
+                <a href="/terms">Terms & Conditions</a>
               </li>
             </ul>
           </div>
+
           <div className="col-sm-3">
             <p className="h6 mt-2">Connect Us</p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button
-                  isExternal
-                  type="link"
-                  href="mailto:support@staycation.com"
-                >
+                <a href="mailto:support@staycation.com">
                   support@staycation.com
-                </Button>
+                </a>
               </li>
               <li className="list-group-item">
-                <Button isExternal type="link" href="tel:+628176011117">
-                  021 - 123 - 4567
-                </Button>
+                <a href="tel:+628176011117">021 - 123 - 4567</a>
               </li>
               <li className="list-group-item">
                 <span>StaycationHQ, South Jakarta.</span>
@@ -79,6 +62,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
         <div className="row">
           <div className="col text-center copyrights">
             Copyright 2021 • All rights reserved • Staycation

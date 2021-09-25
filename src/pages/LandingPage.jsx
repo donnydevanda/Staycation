@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import Loading from "../parts/Loading";
 import Header from "../parts/Header";
 import Hero from "../parts/Hero";
 import MostPicked from "../parts/MostPicked";
 import Categories from "../parts/Categories";
 import Testimony from "../parts/Testimony";
 import Footer from "../parts/Footer";
-
-import Spinner from "../assets/images/spinner.svg";
 
 import { fetchPage } from "../store/actions/page";
 
@@ -34,36 +33,23 @@ class LandingPage extends Component {
   render() {
     const { page } = this.props;
 
-    if (!page.hasOwnProperty("landingPage"))
-      return (
-        <>
-          <div
-            className="container text-center"
-            data-aos="fade-up"
-            data-aos-easing="linear"
-          >
-            <h3 style={{ marginTop: 350 }}>Please Wait ...</h3>
-            <p>This site takes a little time to wake the dynos :)</p>
-            <img
-              className="img-fluid mx-0 my-0"
-              style={{ height: 100, width: 100 }}
-              src={Spinner}
-              alt=""
-            />
-          </div>
-        </>
-      );
+    if (!page.hasOwnProperty("landingPage")) return <Loading />;
 
     return (
       <>
         <Header {...this.props} />
-        <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} />
-        <MostPicked
-          refMostPicked={this.refMostPicked}
-          data={page.landingPage.mostPicked}
-        />
-        <Categories data={page.landingPage.category} />
-        <Testimony data={page.landingPage.testimonial} />
+        <div className="container">
+          <Hero
+            refMostPicked={this.refMostPicked}
+            data={page.landingPage.hero}
+          />
+          <MostPicked
+            refMostPicked={this.refMostPicked}
+            data={page.landingPage.mostPicked}
+          />
+          <Categories data={page.landingPage.category} />
+          <Testimony data={page.landingPage.testimonial} />
+        </div>
         <Footer />
       </>
     );
