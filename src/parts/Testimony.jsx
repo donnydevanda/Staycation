@@ -1,6 +1,6 @@
 import React from "react";
 
-import TestimonyAccent from "../assets/images/testimonial-landingpages-frame.jpg";
+import TestimonyAccent from "../assets/images/testimonial-landingpages-frame.webp";
 
 import Star from "../components/Star";
 import Button from "../components/Button";

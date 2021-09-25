@@ -3,8 +3,8 @@ import React from "react";
 import InputText from "../../components/Form/InputText";
 import InputFile from "../../components/Form/InputFile";
 
-import logoBca from "../../assets/images/logo-bca.jpg";
-import logoMandiri from "../../assets/images/logo-mandiri.jpg";
+import logoBca from "../../assets/images/logo-bca.webp";
+import logoMandiri from "../../assets/images/logo-mandiri.webp";
 
 export default function Payment(props) {
   const { data, ItemDetails, checkout } = props;
